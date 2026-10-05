@@ -34,7 +34,7 @@ export default function Section_Three({ isActive }) {
                             animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                             transition={{ duration: 0.5, delay: 0.9 }}
                         >
-                            <a href="https://californila.com/blogs/news/ishka-villacisneros-accepted-into-forbes-finance-council" className="forbes-link" target='_blank'>
+                            <a href="https://personalshopper.californila.com/blogs/news/ishka-villacisneros-accepted-into-forbes-finance-council" className="forbes-link" target='_blank'>
                                 Read more
                             </a>
                         </motion.div>
@@ -44,7 +44,7 @@ export default function Section_Three({ isActive }) {
                         animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                         transition={{ duration: 0.5, delay: 1 }}
                     >
-                        <img src={forbesWidget} />
+                        <img src={forbesWidget} loading="lazy" width="670" height="445" />
                     </motion.div>
                 </div>
             </div>

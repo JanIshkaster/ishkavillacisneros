@@ -49,16 +49,18 @@ useEffect(() => {
                 <div className="section-container page-6-section-container">
                     <div className="contact-section">
                         <motion.div className="contact-form"
+                            style={{ minHeight: '544px' }}      
                             initial={{ opacity: 0, y: 20 }}
                             animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
-                            <div id="wufoo-qozpaxa17cuur8">
+                            <div id="wufoo-qozpaxa17cuur8" style={{ minHeight: '544px' }}>
                                 Fill out my <a href="https://analytics.wufoo.com/forms/qozpaxa17cuur8">online form</a>.
                             </div>
                         </motion.div>
                         <div className="linkend-widget">
-                            <motion.div className="container"
+                            <motion.div className="container" 
+                                style={{ minHeight: '200px' }}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                                 transition={{ duration: 0.5, delay: 0.6 }}

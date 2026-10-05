@@ -1,7 +1,11 @@
 import { allBlogPosts } from '../assets/content-data/content';
 import { motion } from "motion/react"
 
-export default function Section_Four({isActive}) {   
+export default function Section_five({isActive}) {   
+
+    const sortedBlogPosts = [...allBlogPosts].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    )
 
     return (
         <div id="page5" data-anchor="page5" className="section section-5 pp-scrollable"> 
@@ -16,10 +20,10 @@ export default function Section_Four({isActive}) {
                             delay:  0.2,
                         }}
                     >
-                        {allBlogPosts.map((post, index) => (
+                        {sortedBlogPosts.map((post, index) => (
                         <div key={index} className="blog-card">
                             <div className="blog-card-img">
-                                <img src={post.featured_media_src_url} alt={post.title} className="blog-card-image" />
+                                <img src={post.featured_media_src_url} alt={post.title} className="blog-card-image" loading="lazy"  width="280" height="200"/>
                             </div>  
                             <div className="blog-card-content"> 
                                 <h3 className="blog-card-title">{post.title}</h3>

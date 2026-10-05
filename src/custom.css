@@ -1,5 +1,5 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     background: #666666;
 }
 html, body {
@@ -130,7 +130,7 @@ img.brand-img {
     padding: 20px 100px;
 }
 .logo-grid img {
-    width: 300px;
+    width: 100%;
 }
 div#page1 .pp-tableCell {
     display: flex;
@@ -275,6 +275,8 @@ div#page4 .blog-card-content{
 } 
 div#page4 .blog-card-img img {
     width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
 } 
 div#page4 h3.blog-card-title {
     display: block;
@@ -304,9 +306,9 @@ div#pagepiling div#page6 .section-content{
     padding-top: 11.3rem;
 } 
 div#page5 .blog-card-img img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 10; 
+  object-fit: cover;
 } 
 div#page5 .blog-grid {
     display: grid;
@@ -524,6 +526,10 @@ header.navbar.floating-header.is-light .social-list svg {
     } 
 }
 @media (max-width: 996px) { 
+    div#page3 .forbes-col img {
+        width: 100%;
+        height: auto;
+    }
     #pp-nav {
         display: none;
     }
@@ -532,7 +538,8 @@ header.navbar.floating-header.is-light .social-list svg {
         gap:10px;
     }
     .logo-grid img {
-        width: 100%;
+        height: auto !important;
+        width: 100% !important;
     }
     .blog-grid {
         grid-template-columns: 1fr;

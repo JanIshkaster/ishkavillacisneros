@@ -10,10 +10,17 @@ export default function Header({isOnLightSection}) {
 
     const menuItems = [
         { label: "Home", href: "#page1" },
-        { label: "About", href: "#page2" },
-        { label: "Blogs", href: "#page3" },
+        { label: "About", href: "#page3" },
+        { label: "Blogs", href: "#page5" },
         { label: "Contact", href: "#page6" },
     ];
+
+    const socialItems = [
+        { socialName: "facebook", link: "https://www.facebook.com/ishkavillacisneros", icon: <IoLogoFacebook size={20} /> },
+        { socialName: "instagram", link: "https://www.instagram.com/ishkavilla", icon: <IoLogoInstagram size={20} /> },
+        { socialName: "youtube", link: "https://www.youtube.com/@ishka0220", icon: <IoLogoYoutube size={20} /> },
+        { socialName: "linkedin", link: "https://www.linkedin.com/in/ishkavillacisneros/", icon: <IoLogoLinkedin size={20} /> },
+    ]
 
     return (
         <header className={`navbar floating-header ${isOnLightSection ? 'is-light' : ''}`}>
@@ -22,7 +29,7 @@ export default function Header({isOnLightSection}) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
             > 
-                <img src={brandLogo} alt="Ishka Villa Logo" className="brand-img" />
+                <img src={brandLogo} alt="Ishka Villa Logo" className="brand-img" loading="lazy" height="42" width="42" />
                 <div className="brand-info">
                     <span className="brand-name">Ishka</span>
                     <span className="brand-text">Villacisneros</span>
@@ -34,18 +41,11 @@ export default function Header({isOnLightSection}) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
             > 
-                <a target="_blank" href="https://www.facebook.com/ishkavillacisneros" className="icon social-facebook">
-                    <IoLogoFacebook size={20} />
-                </a>
-                <a target="_blank" href="https://www.instagram.com/ishkavilla" className="icon social-instagram">
-                    <IoLogoInstagram size={20} />
-                </a>
-                <a target="_blank" href="https://www.youtube.com/@ishka0220" className="icon social-youtube">
-                    <IoLogoYoutube size={20} />
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/ishkavillacisneros/" className="icon social-linkedin">
-                    <IoLogoLinkedin size={20} />
-                </a> 
+                {socialItems.map((social, index) => (
+                    <a key={index} target="_blank" href={social.link} className={`icon social-${social.socialName}`} rel="noreferrer" aria-label={`Visit Ishka's ${social.socialName} page`}>
+                        {social.icon}
+                    </a>
+                ))} 
             </motion.div>
 
             <div className="header-burger-menu">
@@ -53,7 +53,9 @@ export default function Header({isOnLightSection}) {
                 <button
                     className={`burger-button ${isOpen ? "active" : ""}`}
                     onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle menu"
+                        aria-label="Toggle menu"
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-nav-menu"
                 >
                     <span></span>
                     <span></span>
@@ -112,18 +114,11 @@ export default function Header({isOnLightSection}) {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.5, delay: 0.5 }}
                                         > 
-                                            <a target="_blank" href="https://www.facebook.com/ishkavillacisneros" className="icon social-facebook">
-                                                <IoLogoFacebook size={20} />
-                                            </a>
-                                            <a target="_blank" href="https://www.instagram.com/ishkavilla" className="icon social-instagram">
-                                                <IoLogoInstagram size={20} />
-                                            </a>
-                                            <a target="_blank" href="https://www.youtube.com/@ishka0220" className="icon social-youtube">
-                                                <IoLogoYoutube size={20} />
-                                            </a>
-                                            <a target="_blank" href="https://www.linkedin.com/in/ishkavillacisneros/" className="icon social-linkedin">
-                                                <IoLogoLinkedin size={20} />
-                                            </a> 
+                                            {socialItems.map((social, index) => (
+                                                <a key={index} target="_blank" href={social.link} className={`icon social-${social.socialName}`} rel="noreferrer" aria-label={`Visit Ishka's ${social.socialName} page`}>
+                                                    {social.icon}
+                                                </a>
+                                            ))}  
                                         </motion.div>
 
                                         <motion.div className="copyright"

@@ -1,15 +1,15 @@
-import bobaBoxLogo from '../assets/images/logos/bobaBoxLogoWebResized.png'
-import californiaLogo from '../assets/images/logos/californilaLogo-370-x-300.png'
-import ishkasterLogo from '../assets/images/logos/ishkasterlogo.png'
-import misenkaLogo from '../assets/images/logos/Misenka-LA-Logo-V1-01-1-1.png'  
-import pinoytownhallLogo from '../assets/images/logos/pinoytownhall-logo.png'
-import sssLogo from '../assets/images/logos/SSS-Logo.png'
+import bobaBoxLogo from '../assets/images/logos/BobaBoxLogo.webp'
+import californiaLogo from '../assets/images/logos/CalifornilaLogo.webp'
+import iMediaIdeasLogo from '../assets/images/logos/IM-Logo-Red-01-v3.webp'
+import misenkaLogo from '../assets/images/logos/Misenka-LA-Logo-V1-01-1-1.webp'  
+import pinoytownhallLogo from '../assets/images/logos/PTHLOGO.webp'
+import sssLogo from '../assets/images/logos/SSS-Logo.webp'
 import { motion } from "motion/react"
 
 const logos = [
   { src: bobaBoxLogo, alt: 'Boba Box' },
   { src: californiaLogo, alt: 'California' },
-  { src: ishkasterLogo, alt: 'Ishkaster' },
+  { src: iMediaIdeasLogo, alt: 'Ishkaster' },
   { src: misenkaLogo, alt: 'Misenka LA' },
   { src: pinoytownhallLogo, alt: 'Pinoy Townhall' },
   { src: sssLogo, alt: 'SSS' },
@@ -32,7 +32,7 @@ export default function Section_two({ isActive }) {
                                     delay: index * 0.2,
                                 }}
                             >
-                                <img src={logo.src} alt={logo.alt} className="brand-logo" />
+                                <img src={logo.src} alt={logo.alt} className="brand-logo" loading="lazy" width="370" height="300" />
                             </motion.div> 
                         ))}
                     </div>

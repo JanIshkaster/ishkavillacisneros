@@ -3,12 +3,16 @@ import { motion } from "motion/react"
 
 export default function Section_Four({isActive}) {   
 
+    const sortedPosts = [...allPosts].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    )
+
     return (
         <div id="page4" data-anchor="page4" className="section section-4 pp-scrollable"> 
             <div className="section-content">
                 <div className="section-container page-4-section-container">
                     <div className="blog-grid">
-                        {allPosts.map((post, index) => (
+                        {sortedPosts.map((post, index) => (
                         <motion.div key={index} className="blog-card"
                             initial={{ opacity: 0, y: 50 }}
                             animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -23,7 +27,7 @@ export default function Section_Four({isActive}) {
                             </div>  
                             <div className="blog-card-content"> 
                                 <h3 className="blog-card-title">{post.title}</h3>
-                                <a href={post.date} target='_blank' className="blog-card-link">Read more</a>
+                                <a href={post.link} target='_blank' className="blog-card-link">Read more</a>
                                 <span className="blog-card-date">
                                     {post.date
                                         ? new Date(post.date).toLocaleDateString('en-US', {

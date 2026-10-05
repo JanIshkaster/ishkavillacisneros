@@ -8,22 +8,21 @@ export default function Section_one() {
             <div className="section-content">
                 <div className="section-container">
                     <div className="intro">
-                        <motion.div className="subtitle-top"
+                        {/* <motion.div className="subtitle-top"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
                             <p>Welcome to</p>
                             <p>Ishka Villacisneros</p>
-                        </motion.div>
+                        </motion.div> */}
                         <motion.div className="display-text"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
                         <h1>
-                            <span className="display-highlight-text">Hello </span>
-                            my name is Ishka.
+                            Hi, I'm <span className="display-highlight-text">Ishka</span>.
                         </h1>
                         </motion.div>
                         <motion.div className="hr-bottom"
